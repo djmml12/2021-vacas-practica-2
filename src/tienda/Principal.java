@@ -1,6 +1,7 @@
 package src.tienda;
 
 import src.clientes.VectorClientes;
+import src.peliculas.VectorPeliculas;
 
 public class Principal {
 
@@ -9,6 +10,7 @@ public class Principal {
     }
 
     private VectorClientes tablaClientes = new VectorClientes();
+    private VectorPeliculas listapeliculas = new VectorPeliculas();
 
     public Principal(){
 
@@ -18,8 +20,12 @@ public class Principal {
             System.out.println("Bienvenido a memorabilia \n\n");
             System.out.println("1) Ingreso de clientes");
             System.out.println("2) Mostrar clientes");
-            System.out.println("3) Ordenar Clientes Ascente");
+            System.out.println("3) Ordenar Clientes Ascendente");
             System.out.println("4) Ordenar Clientes Descendente");
+            System.out.println("5) Ingreso peliculas");
+            System.out.println("6) Mostrar peliculas");
+            System.out.println("7) Ordenar peliculas Ascendente");
+            System.out.println("8) Ordenar peliculas Descendente");
             System.out.println("-1) Salir");
             System.out.println("\n");
             menu = IngresoDatos.getEntero("Ingrese la opción ", true);
@@ -47,6 +53,23 @@ public class Principal {
                 System.out.println("\n\nOrdenado:");
                 tablaClientes.ordenarPorNombre(false);
                 tablaClientes.mostrarClientes();
+            }
+            if (menu == 5){
+                //ingresar peliculas
+                listapeliculas.agregarPelicula();
+            }
+            if(menu ==6){
+                //mostrar peliculas
+                listapeliculas.mostrarPeliculas();
+            }
+            if(menu == 7){
+                //ordenar peli  ascendente z-A
+                listapeliculas.ordenarPorNombre(0);
+            }
+            if(menu==8){
+                //ordenar peli  descendente A-Z
+                listapeliculas.ordenarPorNombre(1);
+
             }
 
         }
